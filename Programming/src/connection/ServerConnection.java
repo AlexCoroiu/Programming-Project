@@ -1,4 +1,4 @@
-package model;
+package connection;
 
 public class ServerConnection {
 
