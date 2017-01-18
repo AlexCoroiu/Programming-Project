@@ -4,7 +4,7 @@ import model.Board;
 import model.Mark;
 
 public class PlayerTui {
-	private static final String[] NUMBERING = {" 00 | 01 | 02  | 03 ", "----+----+----+----",
+	private static final String[] NUMBERING = {" 00 | 01 | 02 | 03 ", "----+----+----+----",
 	        " 10 | 11 | 12 | 13 ", "----+----+----+----", " 20 | 21 | 22 | 23 ",
 	        "----+----+----+----", " 30 | 31 | 32 | 33 "};
 	private static final String LINE = NUMBERING[1];
