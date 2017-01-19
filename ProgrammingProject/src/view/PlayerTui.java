@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Arrays;
+
 import model.Board;
 import model.Mark;
 
@@ -13,13 +15,7 @@ public class PlayerTui {
 	
 	public PlayerTui() {
     	this.fields= new Mark[Board.DIM][Board.DIM][Board.DIM];
-    	for (int x = 0; x < Board.DIM; x++) {
-    		for (int y = 0; y < Board.DIM; y++) {
-    			for (int z = 0; z < Board.DIM; z++) {
-    				this.fields[x][y][z]= Mark.EMPTY;
-    			}
-    		}
-    	}
+    	Arrays.fill(fields,Mark.EMPTY);
     }
 	
 	public void addMark(int x, int y, Mark mark ) {

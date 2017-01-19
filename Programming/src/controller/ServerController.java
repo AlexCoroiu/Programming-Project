@@ -1,18 +1,25 @@
 package controller;
 
+import model.connection.ServerConnection;
+import model.connection.ServerPeer;
 import view.ServerTui;
 
 public class ServerController {
-	private static final String USAGE
-    = "usage: " + ServerController.class.getName() + " <name> <port>";
+	private ServerTui tui;
+	ServerConnection connection;
+	ServerPeer peer;
 	
 	public static void main(String[] args) {
-		ServerTui tui = new ServerTui();
-		
-		if(args.length!=2){
-    		System.out.println(USAGE);
-    		System.exit(0);
-    	}
-		tui.begin();
+		new ServerController();
+	}
+	
+	public ServerController() {
+		tui = new ServerTui();
+		openServer();
+	}
+	
+	public void openServer() {
+		connection = new ServerConnection(tui.port());
+		peer = connection.getPeer();
 	}
 }

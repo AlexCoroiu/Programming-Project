@@ -150,7 +150,7 @@ public class Board {
     //@ ensures \result == this.hasRow(m) || this.hasColumn(m) | this.hasDiagonal(m);
     /*@ pure */
     public boolean isWinner(Mark m) {
-    	assert m==Mark.RED || m==Mark.YELLOW;
+    	assert m == Mark.X || m==Mark.O;
     	return hasRow(m) || hasColumn(m) || hasDiagonal(m);
     }
     
@@ -163,7 +163,7 @@ public class Board {
     //@ ensures \result == isWinner(Mark.RED) | \result == isWinner(Mark.YELLOW);
     /*@pure*/
     public boolean hasWinner() {
-    	return isWinner(Mark.RED) || isWinner(Mark.YELLOW);
+    	return isWinner(Mark.X) || isWinner(Mark.O);
     }
     
     /**

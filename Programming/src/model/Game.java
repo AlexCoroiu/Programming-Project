@@ -1,6 +1,6 @@
 package model;
 
-import controller.Player;
+import model.Player;
 
 public class Game {
 	// -- Instance variables -----------------------------------------

@@ -2,7 +2,7 @@ package model;
 
 public enum Mark {
 
-    EMPTY,RED,YELLOW;
+    EMPTY,X,O;
 	
 	/*@
     ensures this == Mark.RED ==> \result == Mark.YELLOW;
@@ -16,10 +16,10 @@ public enum Mark {
   */
 
     public Mark other() {
-        if (this == RED) {
-            return YELLOW;
-        } else if (this == YELLOW) {
-            return RED;
+        if (this == X) {
+            return O;
+        } else if (this == O) {
+            return X;
         } else {
             return EMPTY;
         }

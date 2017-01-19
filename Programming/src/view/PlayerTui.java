@@ -1,10 +1,13 @@
 package view;
 
+import java.io.IOException;
+import java.util.Observable;
+
 import model.Board;
 import model.Mark;
 
-public class PlayerTui {
-	private static final String[] NUMBERING = {" 00 | 01 | 02  | 03 ", "----+----+----+----",
+public class PlayerTui implements Tui {
+	private static final String[] NUMBERING = {" 00 | 01 | 02 | 03 ", "----+----+----+----",
 	        " 10 | 11 | 12 | 13 ", "----+----+----+----", " 20 | 21 | 22 | 23 ",
 	        "----+----+----+----", " 30 | 31 | 32 | 33 "};
 	private static final String LINE = NUMBERING[1];
@@ -21,6 +24,22 @@ public class PlayerTui {
     		}
     	}
     }
+	
+	public String name() {
+		return readString("Name: ");
+	}
+	
+	public String addr() {
+		return readString("Server address: ");
+	}
+	
+	public void connected(String address, String port) {
+		System.out.println("Connected to " + address + " " + port);
+	}
+	
+	public void gameStart(String name) {
+		System.out.println("You play against " + name);
+	}
 	
 	public void addMark(int x, int y, Mark mark ) {
 		int z = 0;

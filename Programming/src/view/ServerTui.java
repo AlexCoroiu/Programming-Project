@@ -3,7 +3,7 @@ package view;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
-public class ServerTui {
+public class ServerTui implements Tui {
 	
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss : ");
 	
